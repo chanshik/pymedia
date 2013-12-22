@@ -1,39 +1,22 @@
-from Cocoa import NSWindowController, NSLog, objc, NSApplication, NSApp
-from Foundation import NSObject
-from PyObjCTools import AppHelper
-import sqlite3
+"""
+Media Library Management Class.
 
+Basic properties
+- album title, artist, year, genre, cover, track number, disc number.
 
-class Media(NSWindowController):
-    tableView = objc.IBOutlet()
-    conn = None
+"""
 
-    def awakeFromNib(self):
-        NSLog('awakeFromNib')
+class Media(object):
+    media_db = []
 
-    def windowDidLoad(self):
-        NSWindowController.windowDidLoad(self)
-        NSLog('windowDidLoad')
+    def __init__(self):
+        pass
 
-    def windowShouldClose_(self, sender):
-        NSLog('windowShouldClose')
-        return True
+    def add(self, media_info):
+        pass
 
-    def windowWillClose_(self, notification):
-        NSLog('windowWillClose')
-        AppHelper.stopEventLoop()
+    def remove(self, media_info):
+        pass
 
-    def applicationShouldTerminateAfterLastWindowClosed_(self, sender):
-        NSLog('applicationShouldTerminateAfterLastWindowClosed')
-        return True
-
-
-if __name__ == '__main__':
-    app = NSApplication.sharedApplication()
-
-    viewController = Media.alloc().initWithWindowNibName_('Media')
-    viewController.showWindow_(viewController)
-
-    NSApp.activateIgnoringOtherApps_(True)
-
-    AppHelper.runEventLoop()
+    def get_all(self):
+        pass
