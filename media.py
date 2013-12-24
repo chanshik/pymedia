@@ -6,6 +6,9 @@ Basic properties
 
 """
 
+import mutagen
+
+
 class Media(object):
     media_db = []
 
@@ -20,3 +23,8 @@ class Media(object):
 
     def get_all(self):
         pass
+
+    def add_file(self, file_path):
+        f = mutagen.File(file_path)
+
+        self.media_db.append(f)
