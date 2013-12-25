@@ -25,6 +25,11 @@ class Media(object):
         pass
 
     def add_file(self, file_path):
+        ext = file_path.split(".")[-1]
+
         f = mutagen.File(file_path)
 
-        self.media_db.append(f)
+        self.media_db.append({
+            "type": ext,
+            "info": f
+        })
