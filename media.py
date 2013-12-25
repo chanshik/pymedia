@@ -33,3 +33,10 @@ class Media(object):
             "type": ext,
             "info": f
         })
+
+    def add_files(self, files=None):
+        if files is None:
+            return
+
+        for f in files:
+            self.add_file(f)
